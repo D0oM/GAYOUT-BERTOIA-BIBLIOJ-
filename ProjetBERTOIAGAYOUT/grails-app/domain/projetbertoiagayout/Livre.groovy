@@ -8,7 +8,7 @@ class Livre {
 	
 	
 	static hasMany=[auteur:Auteur, reservation:Reservation]
-	
+	static belongsTo = Reservation
 	
 	static constraints = {
 		doc blank:true
@@ -20,5 +20,17 @@ class Livre {
 				+ nombreExemplaireDisponible + "]";
 	}
 
+	
+	void addReservation(Reservation res){
+		
+		if(nombreExemplaireDisponible >0){
+			this.addToReservation(res)
+			nombreExemplaireDisponible = nombreExemplaireDisponible -1
+			
+		}
+		else{
+			println("Il n'y a plus d'exemplaire en stock")
+		}
+	}
 	
 }

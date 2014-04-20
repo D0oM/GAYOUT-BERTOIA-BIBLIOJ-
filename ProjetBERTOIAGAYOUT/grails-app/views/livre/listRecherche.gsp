@@ -36,40 +36,47 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			<form name="ajouterPanier" action="list" method="get">
 			<table>
 				<thead>
 					<tr>
-
+					
 						<g:sortableColumn property="titre" title="${message(code: 'livre.titre.label', default: 'Titre')}" />
-
+					
 						<g:sortableColumn property="nombreExemplaire" title="${message(code: 'livre.nombreExemplaire.label', default: 'Nombre Exemplaire')}" />
-
+					
 						<g:sortableColumn property="nombreExemplaireDisponible" title="${message(code: 'livre.nombreExemplaireDisponible.label', default: 'Nombre Exemplaire Disponible')}" />
-
-						<th><g:message code="livre.doc.label" default="Type" /></th>
-
+						<th><g:message code="livre.doc.label" default="Doc" /></th>
+					
+						
 					</tr>
 				</thead>
 				<tbody>
-
-
-
-
 				<g:each in="${livreFiltre}" status="i" var="livreInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-
-						<td><g:link action="show" id="${livreInstance.id}">${fieldValue(bean: livreInstance, field: "titre")}</g:link></td>
-
+					
+						<td><g:link action="show" id="${livreInstance.id}">${fieldValue(bean: livreInstance, field: "doc")}</g:link></td>
+					
 						<td>${fieldValue(bean: livreInstance, field: "nombreExemplaire")}</td>
-
+					
 						<td>${fieldValue(bean: livreInstance, field: "nombreExemplaireDisponible")}</td>
-
-						<td>${fieldValue(bean: livreInstance, field: "doc")}</td>
-
+					
+						<td>${fieldValue(bean: livreInstance, field: "titre")}</td>
+						
+						<td>
+ 								<%
+ 									String boutonAjouter = ""
+ 									if(livreInstance.nombreExemplaireDisponible>0)
+ 										boutonAjouter = '<button name="idLivre" type="submit" value="' + livreInstance.id +'">Ajouter</button>'
+ 								 %>
+ 								${boutonAjouter}
+ 							</td>
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
+			
+			</form>
 			<div class="pagination">
 				<g:paginate total="${livreInstanceTotal}" />
 			</div>

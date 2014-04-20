@@ -18,6 +18,22 @@
 		<r:layoutResources />
 	</head>
 	<body>
+	<b>Votre panier :</b><br>
+ 			<%
+ 				String livresDuPanier = ''
+ 				for(int i = 1; session.panier != null && i<session.panier.size(); i++){
+ 					if(session.panier[i] != null){
+ 						livresDuPanier += link(action:'deleteLivrePanier',controller:'livre',params:['targetUri': (request.forwardURI - request.contextPath), 'idItem':session.panier[i].getId()]) {   session.panier[i].getTitre()+ '<button>Retirer</button><br>' }
+ 					}
+ 				}
+ 			 %>
+ 			 ${livresDuPanier}
+ 			 <br>
+ 			<g:link controller="reservation" action="validation"><button>Valider</button></g:link>
+ 			<g:link params="[targetUri: (request.forwardURI - request.contextPath)]" controller="livre" action="viderPanier"><button>Vider</button></g:link>
+ 		
+	
+	
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
