@@ -29,8 +29,6 @@ class LivreController {
 			session["panier"]=[]
 			
 		session["panier"].add(Livre.findById(idLivre))
-		
-		
 		params.max = Math.min(max ?: 5, 100)
 		//[livreFiltre: Livre.findAllByTitreLike("%d%"), livreInstanceTotal: Livre.findAllByTitre("La depeche").count(null)]
 		
@@ -61,25 +59,6 @@ class LivreController {
 		
 				[livreFiltre: results, livreInstanceTotal: results.count(null), listeDesTypes: TypeDocument.list()]
 			 }
-	
-	
-	
-	def viderPanier() {
-		session["panier"] = []
-		def targetUri = params.targetUri ?: "/"
-		redirect(uri: targetUri)
-	}
-
-	def deleteLivrePanier(Integer idLivre){
-		for(int i = 1; session["panier"] != null && i<session["panier"].size(); i++){
-			if(session["panier"][i] != null && session["panier"][i].getId() == idLivre){
-				session["panier"].remove(i)
-				def targetUri = params.targetUri ?: "/"
-				redirect(uri: targetUri)
-				return(0)
-			}
-		}
-	}
 	
 	
     def create() {
@@ -164,6 +143,21 @@ class LivreController {
     }
 	
 	
-
+	def viderPanier() {
+				session["panier"] = []
+				def targetUri = params.targetUri ?: "/"
+				redirect(uri: targetUri)
+			}
+		
+	def deleteLivrePanier(Integer idItem){
+				for(int i = 1; session["panier"] != null && i<session["panier"].size(); i++){
+					if(session["panier"][i] != null && session["panier"][i].getId() == idItem){
+						session["panier"].remove(i)
+						def targetUri = params.targetUri ?: "/"
+						redirect(uri: targetUri)
+						return(0)
+					}
+				}
+			}
 	
 }
