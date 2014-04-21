@@ -1,0 +1,13 @@
+panier{
+
+font-family: arial, sans-serif;
+color: #FFFAFA;
+background-color: #C24242;
+font-size: 24px;
+font-variant: small-caps;
+text-align: center;
+-webkit-border-radius: 120px;
+-moz-border-radius: 120px;
+border-radius: 120px;
+	
+}
