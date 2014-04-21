@@ -82,9 +82,7 @@
 	</head>
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			
-		</div>
+		
 		<div id="page-body" role="main">
 			<h1>Welcome to BiblioJ</h1>
 		
