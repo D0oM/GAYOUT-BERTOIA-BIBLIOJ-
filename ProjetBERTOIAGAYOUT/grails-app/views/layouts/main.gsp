@@ -19,6 +19,21 @@
 	</head>
 	<body>
 	<br>
+	<style type="" media="screen">
+	#panier{
+
+font-family: arial, sans-serif;
+background: #abbf78;	
+background-color: #abbf78;
+font-size: 20px;
+letter-spacing: 3.4pt;
+text-align: center;
+	
+}
+</style>
+	
+	
+	<div id="panier">
 	<b>Votre panier : </b><br>
  			<%
  				String livresDuPanier = ''
@@ -32,10 +47,11 @@
  			 <br>
  			 Note : Un livre ne sera validable dans votre panier que s'il est disponible au moment de la validation
  			 <br><br>	
+ 			 
  			<g:link controller="reservation" action="validation"><button>Valider</button></g:link>
  			<g:link params="[targetUri: (request.forwardURI - request.contextPath)]" controller="livre" action="viderPanier"><button>Vider</button></g:link>
  		
-	
+	</div>
 	
 		<div id="grailsLogo" role="banner"><img src="${resource(dir: 'images', file: 'biblioJ2.jpg	')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
