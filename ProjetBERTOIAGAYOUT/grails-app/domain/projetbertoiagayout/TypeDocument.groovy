@@ -7,7 +7,7 @@ class TypeDocument {
     }
 	@Override
 	public String toString() {
-		return "[intitule=" + intitule + "]";
+		return intitule
 	}
 
 }

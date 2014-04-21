@@ -47,6 +47,7 @@
 					
 						<g:sortableColumn property="nombreExemplaireDisponible" title="${message(code: 'livre.nombreExemplaireDisponible.label', default: 'Nombre Exemplaire Disponible')}" />
 						<th><g:message code="livre.doc.label" default="Doc" /></th>
+						
 					
 						
 					</tr>
@@ -63,7 +64,8 @@
 					
 						<td>${fieldValue(bean: livreInstance, field: "titre")}</td>
 						
-						<td>
+						<td>	
+						
  								<%
  									String boutonAjouter = ""
  									if(livreInstance.nombreExemplaireDisponible>0)

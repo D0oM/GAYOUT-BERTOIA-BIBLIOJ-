@@ -18,7 +18,8 @@
 		<r:layoutResources />
 	</head>
 	<body>
-	<b>Votre panier :</b><br>
+	<br>
+	<b>Votre panier : </b><br>
  			<%
  				String livresDuPanier = ''
  				for(int i = 1; session.panier != null && i<session.panier.size(); i++){
@@ -29,12 +30,14 @@
  			 %>
  			 ${livresDuPanier}
  			 <br>
+ 			 Note : Un livre ne sera validable dans votre panier que s'il est disponible au moment de la validation
+ 			 <br><br>	
  			<g:link controller="reservation" action="validation"><button>Valider</button></g:link>
  			<g:link params="[targetUri: (request.forwardURI - request.contextPath)]" controller="livre" action="viderPanier"><button>Vider</button></g:link>
  		
 	
 	
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner"><img src="${resource(dir: 'images', file: 'biblioJ2.jpg	')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
