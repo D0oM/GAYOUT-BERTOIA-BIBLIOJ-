@@ -49,6 +49,11 @@ body {
 
 #grailsLogo {
 	background-color: #abbf78;
+	display: block; 
+margin: 0 auto; 
+height: 350px; /* spécifiez la hauteur de l'image, une bonne attitude à prendre */ 
+width: 740px; /* spécifiez la largeur de l'image, une bonne habitude à prendre */
+
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */

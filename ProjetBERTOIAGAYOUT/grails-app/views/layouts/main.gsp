@@ -34,10 +34,11 @@ text-align: center;
 	
 	
 	<div id="panier">
+	
 	<b>Votre panier : </b><br>
  			<%
  				String livresDuPanier = ''
- 				for(int i = 1; session.panier != null && i<session.panier.size(); i++){
+ 				for(int i = 0; session.panier != null && i<session.panier.size(); i++){
  					if(session.panier[i] != null){
  						livresDuPanier += link(action:'deleteLivrePanier',controller:'livre',params:['targetUri': (request.forwardURI - request.contextPath), 'idItem':session.panier[i].getId()]) { '<button>-</button>' + session.panier[i].getTitre() + '<br>' }
  					}
