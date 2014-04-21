@@ -10,6 +10,11 @@ class Auteur {
 	
 	
     static constraints = {
-		
+		nom blank : false
+		prenom blank : false
     }
+	
+	String toString(){
+		nom + " " + prenom
+	}
 }

@@ -11,13 +11,15 @@ class Livre {
 	static belongsTo = Reservation
 	
 	static constraints = {
+		titre blank:false
+		nombreExemplaire blank:false
+		nombreExemplaireDisponible blank:false
 		doc blank:true
     }
 	
 	String toString() {
-		return "Livre [titre=" + titre + ", nombreExemplaire="
-				+ nombreExemplaire + ", nombreExemplaireDisponible="
-				+ nombreExemplaireDisponible + "]";
+		titre + "," + nombreExemplaire + ","+ nombreExemplaireDisponible+","+doc.toString()
+				
 	}
 
 	
