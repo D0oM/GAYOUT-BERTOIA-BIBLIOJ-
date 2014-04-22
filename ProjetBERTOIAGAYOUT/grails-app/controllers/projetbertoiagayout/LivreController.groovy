@@ -32,25 +32,25 @@ class LivreController {
 		params.max = Math.min(max ?: 5, 100)
 		//[livreFiltre: Livre.findAllByTitreLike("%d%"), livreInstanceTotal: Livre.findAllByTitre("La depeche").count(null)]
 		
-				def typeR = params.type
-				def auteurR = params.auteur
-				def titreR = params.titre
+				def typeRecherche = params.type
+				def auteurRecherche = params.auteur
+				def titreRecherche = params.titre
 		
 		
-				if(typeR == null)
-					typeR = ""
-				if(auteurR == null)
-					auteurR = ""
-				if(titreR == null)
-					titreR = ""
+				if(typeRecherche == null)
+					typeRecherche = ""
+				if(auteurRecherche == null)
+					auteurRecherche = ""
+				if(titreRecherche == null)
+					titreRecherche = ""
 		
-				def c = Livre.createCriteria()
-				def results = c.listDistinct {
-					'in'("doc", TypeDocument.findAllByIntituleLike("%" + typeR + "%"))
+				def criteria = Livre.createCriteria()
+				def results = criteria.listDistinct {
+					'in'("doc", TypeDocument.findAllByIntituleLike("%" + typeRecherche + "%"))
 					auteur{
-						like("nom", "%"+auteurR+"%")
+						like("nom", "%"+auteurRecherche+"%")
 					}
-					like("titre", "%"+titreR+"%")
+					like("titre", "%"+titreRecherche+"%")
 					order("titre","asc")
 		
 		

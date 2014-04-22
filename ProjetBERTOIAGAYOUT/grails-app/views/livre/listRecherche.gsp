@@ -21,13 +21,13 @@
 			
  			<form name="input" action="listRecherche" method="get">
  				
- 				Type = <select name="type">
+ 				<b>Type</b> = <select name="type">
  						<g:each var="type" in="${listeDesTypes}">
  					    <option>${type.intitule}</option>
  						</g:each>
  					</select>   
- 				Auteur = <input type="text" name="auteur">    
- 				Titre = <input type="text" name="titre">  
+ 				<b>Auteur</b> = <input type="text" name="auteur">    
+ 				<b>Titre</b> = <input type="text" name="titre">  
  				<input type="submit" value="Submit"><br><br><br>
  			</form>
  			
