@@ -18,7 +18,7 @@ class Livre {
     }
 	
 	String toString() {
-		titre + "," + nombreExemplaire + ","+ nombreExemplaireDisponible+","+doc.toString()
+		titre + "," + nombreExemplaire + ","+ nombreExemplaireDisponible
 				
 	}
 
