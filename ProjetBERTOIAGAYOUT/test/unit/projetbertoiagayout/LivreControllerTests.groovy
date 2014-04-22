@@ -16,7 +16,7 @@ class LivreControllerTests {
         params["titre"] = 'ALice au pays des merveilles'
 		params["nombreExemplaire"]=5
 		params["nombreExemplaireDisponible"]=3
-		params["doc"]= testeur
+		params["doc"]= testeur 
 		
 		
     }

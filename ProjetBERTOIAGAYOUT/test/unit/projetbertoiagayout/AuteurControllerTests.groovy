@@ -13,7 +13,7 @@ class AuteurControllerTests {
         assert params != null
        
         params["nom"] = 'Marc'
-		params["prenom"]= 'Gayout'
+		params["prenom"]= 'Gayout' 
     }
 
     void testIndex() {
