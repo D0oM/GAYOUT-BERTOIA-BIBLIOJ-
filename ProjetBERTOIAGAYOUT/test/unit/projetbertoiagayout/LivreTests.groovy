@@ -52,4 +52,7 @@ class LivreTests {
 		assert livre.getNombreExemplaireDisponible() == 4
 
 	}
+	
+	
+	
 }
